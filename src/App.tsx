@@ -287,9 +287,7 @@ function App() {
               <Sparkles className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                Voice AI Assistant
-              </h1>
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white">ConversAI</h1>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Powered by OpenAI & ElevenLabs
               </p>

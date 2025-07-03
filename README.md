@@ -1,4 +1,4 @@
-# 🎙️ Voice AI Assistant
+# 🎙️ ConversAI
 
 A modern, full-stack conversational AI voice agent built with React, TypeScript, and TailwindCSS. Features real-time voice synthesis, dynamic prompt engineering, and seamless integration with OpenAI GPT-3.5 and ElevenLabs APIs.
 
