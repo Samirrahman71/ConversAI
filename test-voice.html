@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Test</title>
+</head>
+<body>
+    <h1>Voice AI Assistant Test</h1>
+    <button id="testVoice">Test Voice Input</button>
+    <button id="testTTS">Test Text-to-Speech</button>
+    <div id="output"></div>
+
+    <script>
+        // Test voice input
+        document.getElementById('testVoice').onclick = function() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById('output').innerHTML += '<p>You said: ' + transcript + '</p>';
+                };
+                
+                recognition.start();
+                document.getElementById('output').innerHTML += '<p>Listening...</p>';
+            } else {
+                document.getElementById('output').innerHTML += '<p>Speech recognition not supported</p>';
+            }
+        };
+
+        // Test text-to-speech
+        document.getElementById('testTTS').onclick = function() {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance('Hello! This is a test of the text to speech functionality.');
+                speechSynthesis.speak(utterance);
+                document.getElementById('output').innerHTML += '<p>Speaking test message...</p>';
+            } else {
+                document.getElementById('output').innerHTML += '<p>Speech synthesis not supported</p>';
+            }
+        };
+    </script>
+</body>
+</html>
